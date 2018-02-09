@@ -76,6 +76,8 @@ router.post('/new', function(req, res, next) {
                     })
             } else {
                 res.json({
+                    err:err,
+                    url:url,
                     success: false,
                     err_msg: 'Error while connecting to database'
                 })
