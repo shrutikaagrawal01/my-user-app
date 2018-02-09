@@ -1,11 +1,16 @@
 var express = require('express');
 var router = express.Router();
+const isProductionMode = !process.env.NODE_ENV == 'production' ? false : true;
 // mongodb declaration 
 // Connection URL 
-var url = 'mongodb://localhost:27017/user-db';
+var url = isProductionMode ? "mongodb://bhuneshwer:Bii@6alm@ds231228.mlab.com:31228/mean-sample-db" : 'mongodb://localhost:27017/user-db';
+
 var mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
+
+
+
 /* GET users listing. */
 router.get('/list', function(req, res, next) {
     // Use connect method to connect to the Server 
