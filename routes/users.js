@@ -15,6 +15,9 @@ var ObjectID = require('mongodb').ObjectID;
 router.get('/list', function(req, res, next) {
     // Use connect method to connect to the Server 
     MongoClient.connect(url, function(err, db) {
+        console.log("err", err)
+        console.log("DB", db);
+
         // defining one collection named users under user-db
         var Users = db.collection('users');
         // calling collection.find() to get all the users
@@ -76,8 +79,8 @@ router.post('/new', function(req, res, next) {
                     })
             } else {
                 res.json({
-                    err:err,
-                    url:url,
+                    err: err,
+                    url: url,
                     success: false,
                     err_msg: 'Error while connecting to database'
                 })
