@@ -3,7 +3,7 @@ var router = express.Router();
 const isProductionMode = !process.env.NODE_ENV == 'production' ? false : true;
 // mongodb declaration 
 // Connection URL 
-var url = isProductionMode ? "mongodb://bhuneshwer:Bii#6alm@ds231228.mlab.com:31228/mean-sample-db" : 'mongodb://localhost:27017/user-db';
+var url = 'mongodb://localhost:27017/user-db';
 
 var mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
